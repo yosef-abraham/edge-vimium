@@ -1,4 +1,7 @@
 
+chrome = browser
+chrome.storage.sync = chrome.storage.local
+
 Marks =
   # This returns the key which is used for storing mark locations in chrome.storage.sync.
   getLocationKey: (markName) -> "vimiumGlobalMark|#{markName}"

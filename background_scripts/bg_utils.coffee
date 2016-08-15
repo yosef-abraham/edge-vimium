@@ -1,5 +1,7 @@
 root = exports ? window
 
+chrome = browser
+
 # TabRecency associates a logical timestamp with each tab id.  These are used to provide an initial
 # recency-based ordering in the tabs vomnibar (which allows jumping quickly between recently-visited tabs).
 class TabRecency

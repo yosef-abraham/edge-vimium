@@ -1,3 +1,5 @@
+chrome = browser
+
 class UIComponent
   iframeElement: null
   iframePort: null

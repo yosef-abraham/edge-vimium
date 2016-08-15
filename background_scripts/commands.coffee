@@ -1,3 +1,5 @@
+chrome = browser
+
 Commands =
   init: ->
     for own command, descriptor of commandDescriptions

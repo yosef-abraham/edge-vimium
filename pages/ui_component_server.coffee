@@ -1,4 +1,6 @@
 
+chrome = browser
+
 # Fetch the Vimium secret, register the port received from the parent window, and stop listening for messages
 # on the window object. vimiumSecret is accessible only within the current instance of Vimium.  So a
 # malicious host page trying to register its own port can do no better than guessing.

@@ -10,6 +10,9 @@
 #
 # In all cases except Settings.defaults, values are stored as jsonified strings.
 
+chrome = browser
+chrome.storage.sync = chrome.storage.local
+
 Settings =
   debug: false
   storage: chrome.storage.sync

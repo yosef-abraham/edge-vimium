@@ -1,3 +1,5 @@
+chrome = browser
+
 Utils =
   getCurrentVersion: ->
     chrome.runtime.getManifest().version

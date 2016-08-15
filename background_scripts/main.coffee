@@ -1,7 +1,11 @@
 root = exports ? window
+window.chrome = browser
+
+chrome = browser
 
 # The browser may have tabs already open. We inject the content scripts immediately so that they work straight
 # away.
+
 chrome.runtime.onInstalled.addListener ({ reason }) ->
   # See https://developer.chrome.com/extensions/runtime#event-onInstalled
   return if reason in [ "chrome_update", "shared_module_update" ]

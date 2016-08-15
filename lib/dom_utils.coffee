@@ -265,9 +265,24 @@ DomUtils =
         @simulateMouseEvent "mouseout", undefined, modifiers
         lastHoveredElement = element
 
-      mouseEvent = document.createEvent("MouseEvents")
-      mouseEvent.initMouseEvent(event, true, true, window, 1, 0, 0, 0, 0, modifiers.ctrlKey, modifiers.altKey,
-      modifiers.shiftKey, modifiers.metaKey, 0, null)
+      #mouseEvent = document.createEvent("MouseEvents")
+      #mouseEvent.initMouseEvent(event, true, true, window, 1, 0, 0, 0, 0, modifiers.ctrlKey, modifiers.altKey,
+      #modifiers.shiftKey, modifiers.metaKey, 0, null)
+
+      mouseEvent = new MouseEvent event, {
+        "screenX": 0,
+        "screenY": 0,
+        "clientX": 0,
+        "clientY": 0,
+        "ctrlKey": modifiers.ctrlKey,
+        "shiftKey": modifiers.shiftKey,
+        "altKey": modifiers.altKey,
+        "metaKey": modifiers.metaKey,
+        "button": 0,
+        "relatedTarget": null
+      }
+
+
       # Debugging note: Firefox will not execute the element's default action if we dispatch this click event,
       # but Webkit will. Dispatching a click on an input box does not seem to focus it; we do that separately
       element.dispatchEvent(mouseEvent)

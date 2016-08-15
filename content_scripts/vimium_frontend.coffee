@@ -2,8 +2,17 @@
 # This content script must be run prior to domReady so that we perform some operations very early.
 #
 
+chrome = browser
+
 isEnabledForUrl = true
-isIncognitoMode = chrome.extension.inIncognitoContext
+isIncognitoMode = false
+
+try
+  if not window.indexedDB
+    isIncognitoMode = true
+catch error
+  isIncognitoMode = true
+
 normalMode = null
 
 # We track whther the current window has the focus or not.
